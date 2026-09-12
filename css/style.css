@@ -1,0 +1,1072 @@
+/* ==========================================
+   ALMATEC - ÁREA DO RESPONSÁVEL
+   Identidade visual: Bahia
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --azul: #003b70;
+    --azul-escuro: #002b52;
+    --azul-claro: #eaf3fb;
+
+    --vermelho: #d71920;
+    --vermelho-claro: #fff0f1;
+
+    --branco: #ffffff;
+
+    --cinza-100: #f5f7fa;
+    --cinza-200: #e9edf2;
+    --cinza-500: #687385;
+    --cinza-700: #344054;
+    --preto: #17202a;
+
+    --sombra: 0 8px 30px rgba(0, 0, 0, 0.07);
+
+    --raio: 16px;
+}
+
+
+/* ==========================================
+   GERAL
+========================================== */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f6f9;
+
+    color: var(--preto);
+
+    min-height: 100vh;
+
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ==========================================
+   TOPO
+========================================== */
+
+.topo {
+
+    background: var(--branco);
+
+    border-bottom: 1px solid var(--cinza-200);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.topo-conteudo {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logo-icon {
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 10px;
+
+    background: var(--azul);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    border-bottom: 5px solid var(--vermelho);
+}
+
+.logo-area h1 {
+
+    color: var(--azul);
+
+    font-size: 21px;
+
+    letter-spacing: 1px;
+}
+
+.logo-area span {
+
+    color: var(--cinza-500);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* USUÁRIO */
+
+.usuario-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.usuario-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+}
+
+.usuario-label {
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    color: var(--cinza-500);
+
+    letter-spacing: .5px;
+}
+
+.usuario-info strong {
+
+    font-size: 14px;
+
+    color: var(--azul);
+}
+
+.usuario-avatar {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-weight: bold;
+
+    border: 3px solid #dce9f5;
+}
+
+
+/* ==========================================
+   FAIXA BAHIA
+========================================== */
+
+.faixa-institucional {
+
+    height: 5px;
+
+    display: flex;
+
+    width: 100%;
+}
+
+.faixa-azul {
+
+    background: var(--azul);
+
+    width: 45%;
+}
+
+.faixa-vermelha {
+
+    background: var(--vermelho);
+
+    width: 35%;
+}
+
+.faixa-branca {
+
+    background: white;
+
+    width: 20%;
+}
+
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu {
+
+    background: var(--azul);
+
+    box-shadow: 0 4px 15px rgba(0, 59, 112, .15);
+}
+
+.menu-conteudo {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.menu-link,
+.menu-sair {
+
+    padding: 16px 19px;
+
+    color: rgba(255,255,255,.8);
+
+    font-size: 14px;
+
+    transition: .25s;
+
+    border-bottom: 3px solid transparent;
+}
+
+.menu-link:hover {
+
+    color: white;
+
+    background: rgba(255,255,255,.08);
+}
+
+.menu-link.ativo {
+
+    color: white;
+
+    border-bottom-color: var(--vermelho);
+
+    background: rgba(255,255,255,.08);
+}
+
+.menu-sair {
+
+    margin-left: auto;
+
+    color: white;
+
+    background: rgba(215,25,32,.9);
+
+    border-radius: 7px;
+
+    margin-top: 7px;
+
+    margin-bottom: 7px;
+}
+
+.menu-sair:hover {
+
+    background: var(--vermelho);
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 40px auto 70px;
+}
+
+
+/* ==========================================
+   BOAS-VINDAS
+========================================== */
+
+.boas-vindas {
+
+    background: white;
+
+    border-radius: var(--raio);
+
+    padding: 38px 42px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: var(--sombra);
+
+    border: 1px solid var(--cinza-200);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.boas-vindas::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 6px;
+
+    background: var(--vermelho);
+}
+
+.subtitulo {
+
+    color: var(--vermelho);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.boas-vindas h2 {
+
+    color: var(--azul);
+
+    font-size: 30px;
+
+    margin: 6px 0;
+}
+
+.boas-vindas p {
+
+    color: var(--cinza-500);
+
+    max-width: 600px;
+
+    font-size: 15px;
+}
+
+
+/* DETALHE */
+
+.boas-vindas-detalhe {
+
+    width: 120px;
+
+    height: 120px;
+
+    position: relative;
+}
+
+.circulo-azul {
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    right: 0;
+
+    top: 5px;
+
+    opacity: .08;
+}
+
+.circulo-vermelho {
+
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: var(--vermelho);
+
+    right: 25px;
+
+    top: 28px;
+
+    opacity: .15;
+}
+
+
+/* ==========================================
+   ALUNO
+========================================== */
+
+.aluno-destaque {
+
+    margin-top: 25px;
+
+    background: var(--azul);
+
+    color: white;
+
+    border-radius: var(--raio);
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow: var(--sombra);
+}
+
+.aluno-identificacao {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.aluno-avatar {
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--azul);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    border: 4px solid rgba(255,255,255,.25);
+}
+
+.aluno-identificacao span {
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    opacity: .7;
+}
+
+.aluno-identificacao h3 {
+
+    font-size: 21px;
+
+    margin-top: 2px;
+}
+
+.aluno-identificacao p {
+
+    font-size: 13px;
+
+    opacity: .85;
+}
+
+.status-aluno {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: rgba(255,255,255,.1);
+
+    padding: 10px 15px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+}
+
+.status-ponto {
+
+    width: 8px;
+    height: 8px;
+
+    background: #52d273;
+
+    border-radius: 50%;
+}
+
+
+/* ==========================================
+   TÍTULO DA SEÇÃO
+========================================== */
+
+.titulo-secao {
+
+    margin: 38px 0 18px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+}
+
+.titulo-secao span {
+
+    color: var(--vermelho);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.titulo-secao h2 {
+
+    color: var(--azul);
+
+    font-size: 24px;
+
+    margin-top: 3px;
+}
+
+.titulo-secao p {
+
+    color: var(--cinza-500);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.card {
+
+    background: white;
+
+    border: 1px solid var(--cinza-200);
+
+    border-radius: var(--raio);
+
+    padding: 25px;
+
+    min-height: 245px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.03);
+
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.card::before {
+
+    content: "";
+
+    height: 4px;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    background: var(--azul);
+}
+
+.card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.10);
+
+    border-color: #d5dde6;
+}
+
+.card-rotina::before {
+
+    background: var(--vermelho);
+}
+
+.card-presenca::before {
+
+    background: var(--azul);
+}
+
+.card-perfil::before {
+
+    background: var(--vermelho);
+}
+
+.card-topo {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.icone {
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 13px;
+
+    background: var(--azul-claro);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.card-rotina .icone,
+.card-perfil .icone {
+
+    background: var(--vermelho-claro);
+}
+
+.seta {
+
+    color: var(--cinza-500);
+
+    font-size: 21px;
+
+    transition: .25s;
+}
+
+.card:hover .seta {
+
+    transform: translateX(5px);
+
+    color: var(--vermelho);
+}
+
+.card h3 {
+
+    color: var(--azul);
+
+    font-size: 19px;
+
+    margin-top: 22px;
+}
+
+.card p {
+
+    color: var(--cinza-500);
+
+    font-size: 13px;
+
+    margin-top: 8px;
+
+    line-height: 1.6;
+}
+
+.card-link {
+
+    margin-top: auto;
+
+    padding-top: 18px;
+
+    color: var(--vermelho);
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   INFORMAÇÃO
+========================================== */
+
+.informacao {
+
+    margin-top: 22px;
+
+    background: var(--azul-claro);
+
+    border: 1px solid #d5e5f4;
+
+    border-radius: var(--raio);
+
+    padding: 20px 24px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.informacao-icone {
+
+    width: 32px;
+    height: 32px;
+
+    background: var(--azul);
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+.informacao h3 {
+
+    color: var(--azul);
+
+    font-size: 14px;
+}
+
+.informacao p {
+
+    color: var(--cinza-500);
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+
+/* ==========================================
+   SEM ALUNO
+========================================== */
+
+.sem-aluno {
+
+    background: white;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    margin-top: 30px;
+}
+
+.sem-aluno-icone {
+
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.sem-aluno h2 {
+
+    color: var(--azul);
+
+    margin-bottom: 8px;
+}
+
+.sem-aluno p {
+
+    color: var(--cinza-500);
+
+    font-size: 14px;
+}
+
+.sem-aluno span {
+
+    display: block;
+
+    color: var(--vermelho);
+
+    font-size: 12px;
+
+    margin-top: 12px;
+}
+
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+.rodape {
+
+    background: var(--azul-escuro);
+
+    color: white;
+
+    padding: 30px 5%;
+}
+
+.rodape-conteudo {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.rodape strong {
+
+    font-size: 17px;
+
+    letter-spacing: 1px;
+}
+
+.rodape p {
+
+    color: rgba(255,255,255,.6);
+
+    font-size: 11px;
+
+    margin-top: 4px;
+}
+
+.rodape-direita {
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,.7);
+}
+
+.rodape-linha {
+
+    max-width: 1250px;
+
+    margin: 20px auto 0;
+
+    height: 1px;
+
+    background: rgba(255,255,255,.1);
+}
+
+.copyright {
+
+    max-width: 1250px;
+
+    margin: 12px auto 0 !important;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .cards {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .topo-conteudo {
+
+        height: auto;
+
+        padding: 15px 0;
+
+    }
+
+    .usuario-info {
+
+        display: none;
+
+    }
+
+    .menu-conteudo {
+
+        overflow-x: auto;
+
+    }
+
+    .menu-link,
+    .menu-sair {
+
+        white-space: nowrap;
+
+        padding: 14px;
+
+    }
+
+    .container {
+
+        width: 94%;
+
+        margin-top: 25px;
+
+    }
+
+    .boas-vindas {
+
+        padding: 28px 25px;
+
+    }
+
+    .boas-vindas h2 {
+
+        font-size: 24px;
+
+    }
+
+    .boas-vindas-detalhe {
+
+        display: none;
+
+    }
+
+    .aluno-destaque {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+
+    }
+
+    .status-aluno {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+    .titulo-secao {
+
+        display: block;
+
+    }
+
+    .titulo-secao p {
+
+        margin-top: 5px;
+
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .rodape-conteudo {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+}
