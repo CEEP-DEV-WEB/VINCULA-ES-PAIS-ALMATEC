@@ -73,6 +73,62 @@ CREATE TABLE rotina (
     FOREIGN KEY (disciplina_id) REFERENCES disciplinas(id)
 );
 
+-- PROFESSORES
+CREATE TABLE professores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+-- TURMAS
+CREATE TABLE turmas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+-- PROFESSOR x DISCIPLINA x TURMA
+CREATE TABLE professor_disciplina (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    professor_id INT NOT NULL,
+    disciplina_id INT NOT NULL,
+    turma_id INT NOT NULL,
+
+    FOREIGN KEY (professor_id) REFERENCES professores(id),
+    FOREIGN KEY (disciplina_id) REFERENCES disciplinas(id),
+    FOREIGN KEY (turma_id) REFERENCES turmas(id)
+);
+
+CREATE TABLE justificativas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    aluno_id INT NOT NULL,
+    presenca_id INT NOT NULL,
+    motivo TEXT NOT NULL,
+    status ENUM('Pendente','Aceita','Recusada') DEFAULT 'Pendente',
+    data_envio DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (aluno_id) REFERENCES alunos(id),
+    FOREIGN KEY (presenca_id) REFERENCES presencas(id)
+);
+
+
+CREATE TABLE cursos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE professor_turma_disciplina (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    professor_id INT NOT NULL,
+    turma_id INT NOT NULL,
+    disciplina_id INT NOT NULL,
+
+    FOREIGN KEY (professor_id) REFERENCES professores(id),
+    FOREIGN KEY (turma_id) REFERENCES turmas(id),
+    FOREIGN KEY (disciplina_id) REFERENCES disciplinas(id),
+
+    UNIQUE (professor_id, turma_id, disciplina_id)
+);
 
 INSERT INTO usuarios (nome, email, senha, tipo)
 VALUES
@@ -159,3 +215,120 @@ VALUES
 (1, 4, 'Sexta-feira', '07:00', '07:50', 'Lab. 02', 'Juliana Souza', 'Consultas SQL'),
 
 (1, 5, 'Sexta-feira', '07:50', '08:40', 'Lab. 01', 'Rafael Lima', 'Desenvolvimento web');
+
+
+
+INSERT INTO usuarios (nome, email, senha, tipo)
+VALUES
+('Carlos Santos', 'carlos@email.com', '123456', 'professor');
+
+
+INSERT INTO usuarios (nome, email, senha, tipo)
+VALUES
+('Ana Oliveira', 'ana@escola.com', '123456', 'professor'),
+('Carlos Santos', 'carlos@escola.com', '123456', 'professor'),
+('Marcos Silva', 'marcos@escola.com', '123456', 'professor'),
+('Juliana Souza', 'juliana@escola.com', '123456', 'professor'),
+('Rafael Lima', 'rafael@escola.com', '123456', 'professor');
+
+INSERT INTO cursos (nome)
+VALUES
+('Informática'),
+('Mecatrônica'),
+('Eletromecânica'),
+('Logística'),
+('Edificações'),
+('Segurança do Trabalho');
+
+INSERT INTO professores (usuario_id)
+VALUES (3);
+
+
+INSERT INTO professores (usuario_id)
+SELECT id
+FROM usuarios
+WHERE tipo = 'professor';
+
+
+INSERT INTO professor_turma_disciplina
+(professor_id, turma_id, disciplina_id)
+
+
+INSERT INTO justificativas
+(aluno_id, presenca_id, motivo)
+VALUES
+(1, 3, 'Problema de saúde e não pôde comparecer à aula.');
+
+
+SELECT
+    p.id,
+    t.id,
+    d.id
+
+FROM professores p
+JOIN usuarios u ON u.id = p.usuario_id
+JOIN turmas t ON t.identificacao = '1º Informática'
+JOIN disciplinas d
+
+WHERE
+    (u.nome = 'Ana Oliveira' AND d.nome = 'Português')
+    OR
+    (u.nome = 'Carlos Santos' AND d.nome = 'Matemática')
+    OR
+    (u.nome = 'Marcos Silva' AND d.nome = 'Informática')
+    OR
+    (u.nome = 'Juliana Souza' AND d.nome = 'Banco de Dados')
+    OR
+    (u.nome = 'Rafael Lima' AND d.nome = 'Programação');
+
+
+
+ALTER TABLE turmas
+MODIFY COLUMN nome VARCHAR(100) NULL;
+
+select * from turmas;
+
+ALTER TABLE turmas
+ADD COLUMN curso_id INT,
+ADD COLUMN serie INT,
+ADD COLUMN identificacao VARCHAR(20);
+
+ALTER TABLE turmas
+ADD CONSTRAINT fk_turmas_curso
+FOREIGN KEY (curso_id) REFERENCES cursos(id);
+
+ALTER TABLE alunos
+ADD COLUMN turma_id INT;
+
+ALTER TABLE alunos
+ADD CONSTRAINT fk_alunos_turma
+FOREIGN KEY (turma_id) REFERENCES turmas(id);
+
+UPDATE alunos SET turma_id = 1
+WHERE id = 1;
+
+SELECT * FROM alunos;
+
+SELECT id, nome, email, tipo
+FROM usuarios
+WHERE tipo = 'professor';
+
+
+SELECT
+    p.id AS professor_id,
+    u.nome AS professor,
+    t.identificacao AS turma,
+    d.nome AS disciplina
+FROM professor_turma_disciplina ptd
+JOIN professores p ON p.id = ptd.professor_id
+JOIN usuarios u ON u.id = p.usuario_id
+JOIN turmas t ON t.id = ptd.turma_id
+JOIN disciplinas d ON d.id = ptd.disciplina_id;
+
+
+ALTER TABLE justificativas
+ADD COLUMN observacao_professor TEXT;
+
+
+ALTER TABLE presencas
+ADD UNIQUE (aluno_id, disciplina_id, data_aula);
